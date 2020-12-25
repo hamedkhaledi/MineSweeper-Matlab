@@ -1,10 +1,12 @@
 function Put_buttons(m,n,matrix_game,size_btn)
     count = 1;
-
+    unclick_img = imresize(imread('images/facingDown.png'),0.125);
     for x = 1:m
         for y = 1:n
-            u((x-1)*(m)+y) = uicontrol ('style', 'pushbutton');
-            set(u((x-1)*(m)+y) , 'position' , [size_btn*(y-1),size_btn*(m-x),size_btn,size_btn])
+            c = (x-1)*(m)+y;
+            u(c) = uicontrol ('style', 'pushbutton');
+            set(u(c) , 'position' , [size_btn*(y-1),size_btn*(m-x),size_btn,size_btn]);
+            set(u(c),'cdata',unclick_img);
             count = count + 1;
             disp((x-1)*(m)+y)
         end
