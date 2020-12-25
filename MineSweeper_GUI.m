@@ -1,0 +1,13 @@
+% GUI base
+function MineSweeper_GUI()
+    width_size = 600;
+    height_size = 600;
+    fig = figure('Position' , [400,400,width_size,height_size],...
+    'Resize','off',...
+    'MenuBar','none',...
+    'Name','MineSweeper',...
+    'NumberTitle','off');
+    
+    
+end
+
