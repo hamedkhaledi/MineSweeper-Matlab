@@ -18,7 +18,7 @@ number_of_tiles_col = game_height /size_tile;
 
 MineSweeper_GUI(fig_width,fig_height)
 matrix_game = deploy_mines (number_of_tiles_row,number_of_tiles_col,num_of_bombs);
-Put_buttons(number_of_tiles_row,number_of_tiles_col,matrix_game,size_tile);
+Put_buttons(number_of_tiles_row,number_of_tiles_col,size_tile);
 
 
 disp(matrix_game)
