@@ -1,4 +1,6 @@
 global matrix_game;
+global matrix_flags ;
+
 % size of board game
 size_row = 20;
 size_col = 20;
@@ -15,6 +17,7 @@ size_tile = 25;
 %tiles number
 number_of_tiles_row = game_width /size_tile;
 number_of_tiles_col = game_height /size_tile;
+;
 
 MineSweeper_GUI(fig_width,fig_height)
 matrix_game = deploy_mines (number_of_tiles_row,number_of_tiles_col,num_of_bombs);

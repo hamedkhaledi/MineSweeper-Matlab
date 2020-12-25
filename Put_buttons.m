@@ -1,4 +1,5 @@
 function Put_buttons(m,n,size_btn)
+    global matrix_flags;
     count = 1;
     unclick_img = imresize(imread('images/facingDown.png'),0.125);
     for x = 1:m
@@ -11,6 +12,9 @@ function Put_buttons(m,n,size_btn)
         end
     end
     
+    % flags matrix(right click)
+    matrix_flags = false(m, n);
+
     for x = 1:m
         for y = 1:n
             c = (x-1)*(m)+y;
