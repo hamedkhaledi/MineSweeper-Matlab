@@ -6,7 +6,7 @@ function Put_buttons(m,n,size_btn)
         for y = 1:n
             c = (x-1)*(m)+y;
             u(c) = uicontrol ('style', 'pushbutton');
-            set(u(c) , 'position' , [size_btn*(y-1),size_btn*(m-x),size_btn,size_btn]);
+            set(u(c) , 'position' , [size_btn*(y-1)+9,size_btn*(m-x)+8,size_btn,size_btn]);
             set(u(c),'cdata',unclick_img);
             count = count + 1;
         end

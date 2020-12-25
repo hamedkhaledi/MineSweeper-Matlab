@@ -5,8 +5,8 @@ global matrix_flags ;
 size_row = 20;
 size_col = 20;
 % size of fig
-fig_width = 200;
-fig_height = 300;
+fig_width = 216;
+fig_height = 250;
 %number of bombs
 num_of_bombs = 10;
 % size of game
