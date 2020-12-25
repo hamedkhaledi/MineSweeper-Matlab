@@ -6,9 +6,9 @@ function btn_cb_left(Arg1,Arg2,u,x,y,m,n)
         case -1
             hit_mine(x,y,u,c);
         case 0 
-            hit_empty(x,y,u,c,m,n);
+            hit_empty(x,y,u,c);
         case -2
-            %ignore
+            disp('e
         otherwise 
            hit_number(x,y,u,c);
     end

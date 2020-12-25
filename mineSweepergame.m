@@ -1,4 +1,4 @@
-
+global matrix_game;
 % size of board game
 size_row = 20;
 size_col = 20;
