@@ -1,16 +1,21 @@
-function Put_buttons(width,height)
+function Put_buttons(m,n,matrix_game,size_btn)
     count = 1;
-    size_btn = 1;
-    size_row = width/size_btn;
-    size_col = height/size_btn;
-    for x = 0:size_row - 1
-        for y = 0:size_col - 1
-            u(count) = uicontrol ('style', 'pushbutton');
-            set(u(count) , 'position' , [size_btn*x,size_btn*y,size_btn,size_btn])
+
+    for x = 1:m
+        for y = 1:n
+            u((x-1)*(m)+y) = uicontrol ('style', 'pushbutton');
+            set(u((x-1)*(m)+y) , 'position' , [size_btn*(y-1),size_btn*(m-x),size_btn,size_btn])
             count = count + 1;
+            disp((x-1)*(m)+y)
         end
     end
     
+    for x = 1:m
+        for y = 1:n
+            set(u((x-1)*(m)+y), 'callback', {@btn_cb_left,u,x,y,matrix_game,m,n})
+            set(u((x-1)*(m)+y), 'ButtonDownFcn', {@btn_cb_right,u,x,y,matrix_game,m,n})
+        end
+    end
    
 end
 

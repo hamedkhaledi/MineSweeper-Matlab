@@ -11,8 +11,9 @@ function matrix_game = deploy_mines(m, n, k)
     M(randsample(m * n, k)) = 1;
 
     matrix_game = conv2(double(M), [1 1 1; 1 0 1; 1 1 1], 'same');
-    for row = 0:m
-        for col = 0:n
+    
+    for row = 1:m
+        for col = 1:n
             if M (row,col) == 1
                 matrix_game (row,col) = -1;
             end
