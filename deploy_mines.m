@@ -1,8 +1,9 @@
 function matrix_game = deploy_mines(m, n, k)
     % Deploy mines to a field (determine where to place the mines)
     %
-    %   M:  the m x n logical matrix of mine indicators
-    %   nnm:    the matrix of numbers of neighboring mines
+    %   m:  the m x n logical matrix of mine indicators
+    %   matrix_game:    the m x n logical matrix of mine indicators 
+    %                   and numbers ( -1 : bombs , others : numbers) 
     %
     %   This function uses the pure random way
     %

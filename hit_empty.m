@@ -3,8 +3,8 @@ function hit_empty(x,y,c,m,n)
     global matrix_flags;
     global hitNum;
     global u;
-    hitNum = hitNum+1;
     if (matrix_flags(x,y) == 0) 
+        hitNum = hitNum+1;
         matrix_game(x,y) = -2;
         empty_img = imresize(imread('images/0.png'),0.125);
         set(u(c),'cdata',empty_img);

@@ -14,11 +14,12 @@ function hint_cb()
         end
     end
     if( size(rows,2)>0)
-        i = randi([1,size(rows,2)],1);
-        x = rows(i);
-        y = cols(i);
-        c = (x-1)*(n)+y;
-        hit_number(x,y,c);
-    end
+    disp(size(rows))
+    i = randi([1,size(rows,2)],1);
+    x = rows(i);
+    y = cols(i);
+  
+    c = (x-1)*(n)+y;
+    hit_number(x,y,c);
 end
 
