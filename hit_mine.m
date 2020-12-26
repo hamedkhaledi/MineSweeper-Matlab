@@ -24,7 +24,7 @@ function hit_mine(x,y,c,m,n)
                      bomb2_img = imresize(imread('images/bomb2.jpg'),[25,25]);
                      set(u(c),'cdata',bomb2_img);
                 end
-                matrix_game(i,j) = -2;
+                matrix_game(i,j) = -3;
             end
         end
         %end game
