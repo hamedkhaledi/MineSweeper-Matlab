@@ -8,6 +8,7 @@ function hit_empty(x,y,c,m,n)
         matrix_game(x,y) = -2;
         empty_img = imresize(imread('images/0.png'),0.125);
         set(u(c),'cdata',empty_img);
+        checkWin();
         if (x>1 && y>1)
             x_temp = x-1;
             y_temp = y-1;

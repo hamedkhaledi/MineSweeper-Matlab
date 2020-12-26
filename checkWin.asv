@@ -6,7 +6,6 @@ global num_of_bombs;
 global fig_height;
 global fig_width;
 global Smiley;
-global matrix_game;
 if hitNum >= number_of_tiles_col*number_of_tiles_row - num_of_bombs
      %%%%%%%%%
         Smiley_im_orig_Win = imread('images/Win.png');

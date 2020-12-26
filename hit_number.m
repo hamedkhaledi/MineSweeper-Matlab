@@ -9,6 +9,7 @@ function hit_number(x,y,c)
         set(u(c),'cdata',num_img);
         hitNum = hitNum+1;
         matrix_game(x,y) = -2; % clicked
+        checkWin();
     end
 end
 

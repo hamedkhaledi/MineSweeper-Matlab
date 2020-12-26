@@ -32,6 +32,5 @@ function btn_cb_left(Arg1,Arg2,x,y,m,n)
             end
         end
     end
-    checkWin();
 end
 
