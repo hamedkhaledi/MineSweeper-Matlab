@@ -1,8 +1,7 @@
 % GUI base
 
 function MineSweeper_GUI(fig_width,fig_height)
-    global time;
-    global RemainingBombs;
+
     global fig;
     global Smiley;
 
@@ -20,15 +19,15 @@ function MineSweeper_GUI(fig_width,fig_height)
 
     % Create menus
     gamem = uimenu(fig,'Label','Game');
-    beginner_cb = @(s,e)SetBoardDims(fig,'BEGINNER');
+    beginner_cb = @(s,e)SetBoard('BEGINNER');
     uimenu(gamem,'Label','Beginner', ...
                          'Callback',beginner_cb, ...
                          'Accelerator','1');
-    intermediate_cb = @(s,e)SetBoardDims(fig,'INTERMEDIATE');
+    intermediate_cb = @(s,e)SetBoard('INTERMEDIATE');
     uimenu(gamem,'Label','Intermediate', ...
                          'Callback',intermediate_cb, ...
                          'Accelerator','2');
-    expert_cb = @(s,e)SetBoardDims(fig,'EXPERT');
+    expert_cb = @(s,e)SetBoard('EXPERT');
     uimenu(gamem,'Label','Expert', ...
                          'Callback',expert_cb, ...
                          'Accelerator','3');
@@ -38,7 +37,7 @@ function MineSweeper_GUI(fig_width,fig_height)
                          'Separator','on', ...
                          'Accelerator','R');
     uimenu(gamem,'Label','Close', ...
-                         'Callback',@(s,e)Close(this), ...
+                         'Callback',@(s,e)CloseGUI(), ...
                          'Separator','on', ...
                          'Accelerator','W');
 
@@ -49,12 +48,10 @@ function MineSweeper_GUI(fig_width,fig_height)
                          'Accelerator','H');
             
                              
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    Smiley_im_orig = imread('images/Happy.png');  % Needs to be true color, i.e. MxNx3
-
-   % im_sized = imresize(im_orig,[35,35]); % size of the button
+    %show happy smiley at first
+    Smiley_im_orig = imread('images/Happy.png');    
     im_sized = imresize(Smiley_im_orig, [ fig_height*0.1 , fig_width*0.1]);
-    % create a pushbtton ( adapt it to your needs)
+   
     Smiley = uicontrol('style','push',...
          'units','normalized',...
          'position',[0.45,0.86, 0.1, 0.1],...
@@ -63,7 +60,6 @@ function MineSweeper_GUI(fig_width,fig_height)
 
     set(Smiley,'CData',im_sized);
             
-
            
     
 end

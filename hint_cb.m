@@ -1,4 +1,5 @@
 function hint_cb()
+%show a random cell as a hint
     global matrix_game;
     global matrix_flags ;
     m = size(matrix_game,1);

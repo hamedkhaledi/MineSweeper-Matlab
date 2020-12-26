@@ -1,16 +1,22 @@
-function CloseGUI(fig)
+function CloseGUI()
+global timerobj;
+global fig;
+global BombControl
+global Smiley;
         try
             % Delete timer
-            stop(this.timerobj);
-            delete(this.timerobj);
-        catch %#ok
+            StopTimer();
+            delete(timerobj);
+        catch 
             % Graceful exit
         end
 
         try
-            % Delete the figure
+            % Delete the figure and BombContoler and Smiley
             delete(fig);
-        catch %#ok
+            delete(BombControl);
+            delete(Smiley);
+        catch 
             % Something strange happened to the figure handle, so
             % delete using gcf
             delete(gcf);

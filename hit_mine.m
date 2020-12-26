@@ -9,14 +9,12 @@ function hit_mine(x,y,c,m,n)
         bomb_img = imresize(imread('images/bomb.jpg'),[25,25]);
         set(u(c),'cdata',bomb_img);
         
-        %%%%%%%%%
+        %if the player loses , Smiley will be sad :( 
         Smiley_im_orig_sad = imread('images/Sad.png');
         Smiley_im_sized_sad = imresize(Smiley_im_orig_sad, [ fig_height*0.1 , fig_width*0.1]);
         set(Smiley,'CData',Smiley_im_sized_sad);
-        %%%%%%%%%%
-        
-        
-        
+              
+         %if the player loses,timer stops
         for i = 1:m
             for j = 1:n
                 c = (i-1)*(n)+j;
@@ -28,6 +26,7 @@ function hit_mine(x,y,c,m,n)
             end
         end
         %end game
+        StopTimer();
     end
 end
 

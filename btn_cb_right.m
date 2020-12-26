@@ -11,14 +11,18 @@ function btn_cb_right(inputArg1,inputArg2,x,y,m,n)
     global fig_width;
     global Smiley;
     if(matrix_game(x,y) ~= -3)
-        start = true;
+        if start == false 
+            StartTimer();
+
+            start = true;
+        end
         c = (x-1)*(n)+y;
         if (matrix_game(x,y)==-2)
             Smiley_im_orig_Surprised = imread('images/O.png');
             Smiley_im_Surprised = imresize(Smiley_im_orig_Surprised, [ fig_height*0.1 , fig_width*0.1]);
             set(Smiley,'CData',Smiley_im_Surprised);
         else
-             Smiley_im_orig = imread('images/Happy.png');  % Needs to be true color, i.e. MxNx3
+             Smiley_im_orig = imread('images/Happy.png');  
              im_sized = imresize(Smiley_im_orig, [ fig_height*0.1 , fig_width*0.1]);
              set(Smiley,'CData',im_sized);
         end
