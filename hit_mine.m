@@ -1,4 +1,5 @@
-function hit_mine(x,y,u,c,m,n)
+function hit_mine(x,y,c,m,n)
+    global u;
     global matrix_game;
     global matrix_flags;
     global Smiley;

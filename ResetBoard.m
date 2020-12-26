@@ -7,5 +7,5 @@ global fig;
 %             this.timeElapsed = 0;
 %             this.StopTimer();
 %             this.UpdateTimeDisplay();
-        end
+ end
         

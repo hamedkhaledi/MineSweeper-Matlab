@@ -1,4 +1,5 @@
-function hit_number(x,y,u,c)
+function hit_number(x,y,c)
+    global u;
     global matrix_game;
     global matrix_flags;
     global hitNum;

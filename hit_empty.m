@@ -1,7 +1,8 @@
-function hit_empty(x,y,u,c,m,n)
+function hit_empty(x,y,c,m,n)
     global matrix_game;
     global matrix_flags;
     global hitNum;
+    global u;
     hitNum = hitNum+1;
     if (matrix_flags(x,y) == 0) 
         matrix_game(x,y) = -2;
@@ -12,9 +13,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y-1;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0 )
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
 
@@ -24,9 +25,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0)
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
 
@@ -35,9 +36,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y+1;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0)
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
 
@@ -46,9 +47,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y-1;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0)
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
 
@@ -57,9 +58,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y+1;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0)
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
 
@@ -68,9 +69,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y-1;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0)
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
 
@@ -82,9 +83,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0)
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
 
@@ -94,9 +95,9 @@ function hit_empty(x,y,u,c,m,n)
             y_temp = y+1;
             c_temp = (x_temp-1)*(n)+y_temp;
             if(matrix_game(x_temp,y_temp) == 0)
-                hit_empty(x_temp,y_temp,u,c_temp,m,n);
+                hit_empty(x_temp,y_temp,c_temp,m,n);
             elseif (matrix_game(x_temp,y_temp) > 0 )
-                hit_number(x_temp,y_temp,u,c_temp);
+                hit_number(x_temp,y_temp,c_temp);
             end
         end
     end
