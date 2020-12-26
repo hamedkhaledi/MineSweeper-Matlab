@@ -2,7 +2,9 @@
 function btn_cb_left(Arg1,Arg2,u,x,y,m,n)
     global matrix_game;
     global matrix_flags;
-    c = (x-1)*(m)+y;
+    global start;
+    start = true;
+    c = (x-1)*(n)+y;
     if matrix_flags(x,y) == 0
         switch matrix_game (x,y)
             case -1
@@ -15,5 +17,7 @@ function btn_cb_left(Arg1,Arg2,u,x,y,m,n)
                hit_number(x,y,u,c);
         end
     end
+    
+    checkWin();
 end
 

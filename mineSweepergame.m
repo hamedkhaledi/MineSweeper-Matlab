@@ -1,27 +1,13 @@
 global matrix_game;
 global matrix_flags ;
+global time;
+global RemainingBombs;
+global num_of_flags;
+global num_of_bombs;
+global start ;
+global level;
+global fig;
 
-% size of board game
-size_row = 20;
-size_col = 20;
-% size of fig
-fig_width = 216;
-fig_height = 250;
-%number of bombs
-num_of_bombs = 10;
-% size of game
-game_width = 200;
-game_height = 200;
-%tile size
-size_tile = 25;
-%tiles number
-number_of_tiles_row = game_width /size_tile;
-number_of_tiles_col = game_height /size_tile;
-;
+level = 'INTERMEDIATE';
+SetBoardDims(fig,level)
 
-MineSweeper_GUI(fig_width,fig_height)
-matrix_game = deploy_mines (number_of_tiles_row,number_of_tiles_col,num_of_bombs);
-Put_buttons(number_of_tiles_row,number_of_tiles_col,size_tile);
-
-
-disp(matrix_game)
