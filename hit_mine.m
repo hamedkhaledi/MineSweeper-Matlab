@@ -41,6 +41,11 @@ function hit_mine(x,y,c)
         end
         %end game
         StopTimer();
+        % bomb sound play
+        [bomb_sound, Fs] = audioread('Sound/bomb1.mp3');
+        sound(bomb_sound, Fs, 16);
+        pause(1.5);
+        clear sound;
     end
 end
 
