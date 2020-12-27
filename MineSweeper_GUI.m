@@ -1,10 +1,14 @@
+function MineSweeper_GUI()
 % GUI base
-
-function MineSweeper_GUI(fig_width,fig_height)
-
+%
+    % width of figure
+    global fig_width;  
+    % height of figure
+    global fig_height; 
+    % The figure template
     global fig;
     global Smiley;
-
+    % build figure with background
      fig = figure('Position' , [200,200,fig_width,fig_height],...
     'Resize','off',...
     'MenuBar','none',...
@@ -17,8 +21,10 @@ function MineSweeper_GUI(fig_width,fig_height)
     uistack(image(frame_img),'bottom');
    
 
-    % Create menus
+    % Create menus and their callbacks
+    % Game menu
     gamem = uimenu(fig,'Label','Game');
+    % level menus
     beginner_cb = @(s,e)SetBoard('BEGINNER');
     uimenu(gamem,'Label','Beginner', ...
                          'Callback',beginner_cb, ...
@@ -31,20 +37,20 @@ function MineSweeper_GUI(fig_width,fig_height)
     uimenu(gamem,'Label','Expert', ...
                          'Callback',expert_cb, ...
                          'Accelerator','3');
-
+    % reset board button and define it's callback
     uimenu(gamem,'Label','Reset Board', ...
                          'Callback',@(s,e)ResetBoard(), ...
                          'Separator','on', ...
-                         'Accelerator','R');
+                          'Accelerator','R');
+    % close button and define it's callback   
     uimenu(gamem,'Label','Close', ...
                          'Callback',@(s,e)CloseGUI(), ...
                          'Separator','on', ...
                          'Accelerator','W');
-
+    %hint button and define it's callback
     hintm = uimenu(fig,'Label','Hint');
-    hint = @(s,e)hint_cb();
     uimenu(hintm,'Label','Hint...', ...
-                         'Callback',hint, ...
+                         'Callback',@(s,e)hint_cb(), ...
                          'Accelerator','H');
             
                              

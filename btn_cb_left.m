@@ -1,11 +1,9 @@
-function btn_cb_left(Arg1,Arg2,x,y,m,n)
+function btn_cb_left(Arg1,Arg2,x,y)
 % The function handles left click on tile
 %
 %   Arg1,Arg2 - extra arguments for callback
 %   x - the position of tile clicked in row 
 %   y - the position of tile clicked in column 
-%   m - the number of rows
-%   n - the number of columns
 %
     % global values that explained in setBoard
     global matrix_game;
@@ -14,7 +12,9 @@ function btn_cb_left(Arg1,Arg2,x,y,m,n)
     global fig_height;
     global fig_width;
     global Smiley;
-    
+    global number_of_tiles_col;
+    % the number of cols
+    n = number_of_tiles_col;
     % start game if first tile pressed
     if start == false 
         StartTimer();
@@ -41,10 +41,10 @@ function btn_cb_left(Arg1,Arg2,x,y,m,n)
             switch matrix_game (x,y)
                 % oh , there is a bomb
                 case -1 
-                    hit_mine(x,y,c,m,n);
+                    hit_mine(x,y,c);
                 % nice job, empty cell
                 case 0 
-                    hit_empty(x,y,c,m,n);
+                    hit_empty(x,y,c);
                 % that cell cliked before ( do nothing )
                 case -2
                     %ignore

@@ -1,4 +1,9 @@
 function hit_number(x,y,c)
+% change pic of tile selected that actually is a number
+% x - the row of empty cell
+% y - the col of empty cell
+% c - the number of tile that clicked ( for fast calculation )
+%
     global u;
     global matrix_game;
     global matrix_flags;

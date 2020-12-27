@@ -1,6 +1,6 @@
 function ResetBoard()
+% reset board to the specific level
 global level;
-global fig;
        SetBoard(level)
  end
         

@@ -84,20 +84,20 @@ function SetBoard(lvl)
     % close previous GUI
     CloseGUI();
     % and create new one
-    MineSweeper_GUI(fig_width,fig_height)
+    MineSweeper_GUI()
 
     % build matrix game
-    matrix_game = deploy_mines (number_of_tiles_row,number_of_tiles_col,num_of_bombs);
+    matrix_game = deploy_mines ();
     % show buttons on GUI
-    Put_buttons(number_of_tiles_row,number_of_tiles_col,size_tile);
+    Put_buttons(size_tile);
     % show num of bombs on GUI
     CreateMineDisplay();
     % update number of bombs and mumber of flags
-    UpdateMineDisplay(num_of_bombs,num_of_flags);
+    UpdateMineDisplay();
 
     %show happy smiley at first on top
     Smiley_im_orig_Happy = imread('images/Happy.png');         
-    Smiley_im_sized_Happy = imresize(Smiley_im_orig_Happy, [ fig_height*0.1 , fig_width*0.1]);       
+    Smiley_im_sized_Happy = imresize(Smiley_im_orig_Happy, [fig_height*0.1, fig_width*0.1]);       
     set(Smiley,'CData',Smiley_im_sized_Happy);
     
 	%show timer

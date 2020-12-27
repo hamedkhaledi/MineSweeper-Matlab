@@ -1,22 +1,22 @@
-function btn_cb_right(inputArg1,inputArg2,x,y,m,n)
+function btn_cb_right(inputArg1,inputArg2,x,y)
 % The function handles right click on tile
 %
 %   Arg1,Arg2 - extra arguments for callback
 %   x - the position of tile clicked in row 
 %   y - the position of tile clicked in column 
-%   m - the number of rows
-%   n - the number of columns
 %
     % global values that explained in setBoard
     global matrix_game;
     global matrix_flags;
     global num_of_flags;
-    global num_of_bombs;
     global start;
     global RemainingBombs;
     global fig_height;
     global fig_width;
     global Smiley;
+    global number_of_tiles_col;
+    % the number of cols
+    n = number_of_tiles_col;
     % the matrix of callbacks for tiles
     global u;
     % check if game is finished
@@ -53,7 +53,7 @@ function btn_cb_right(inputArg1,inputArg2,x,y,m,n)
                         num_of_flags= num_of_flags+1;
                         RemainingBombs=RemainingBombs-1;
                         % update GUI
-                        UpdateMineDisplay(num_of_bombs,num_of_flags)
+                        UpdateMineDisplay()
                     end
                 % Hi! flag
                 case 1 
@@ -63,7 +63,7 @@ function btn_cb_right(inputArg1,inputArg2,x,y,m,n)
                     % decrease number of available flags
                     num_of_flags= num_of_flags-1;
                     RemainingBombs=RemainingBombs+1;
-                    UpdateMineDisplay(num_of_bombs,num_of_flags)
+                    UpdateMineDisplay()
                 otherwise 
                    %ignore
             end
