@@ -1,5 +1,5 @@
-# MineSweeper Matlab
-matlab 99 project
+# MineSweeper Matlab Course Project
+
 mineSweeper with matlab :)
 enjoy!
 # video Link
